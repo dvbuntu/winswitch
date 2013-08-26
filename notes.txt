@@ -24,4 +24,13 @@ Challenges
 
 PWS will have to run in the background, yet it will have to intercept keyboard commands.  I can get around this by having it be a command line argument and have an openbox shortcut.  So the command line must contain the info necessary as far as what direction to switch.  I don't think openbox will change the focus just for a keyboard shortcut.
 
-This will make debugging a little easier since I'll be constantly switching the window nearest right of wherever I'm coding.  
+This will make debugging a little easier since I'll be constantly switching the window nearest right of wherever I'm coding.
+
+Todo
+----
+
+* Get a skeleton X11 C program compiling
+** get one running
+* Change focus from a fixed window to another
+* Get a list of windows and their positions using X11
+* Other Flow tasks
