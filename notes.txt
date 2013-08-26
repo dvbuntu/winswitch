@@ -1,0 +1,2 @@
+http://cboard.cprogramming.com/linux-programming/125534-accessing-windows-x11.html
+-get a list of windows and print out their names
