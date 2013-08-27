@@ -38,7 +38,9 @@ def switch(target):
 def usage():
     print('Try R, L, U, D as a direction')
 
-def main():
+#def main():
+#for debugging purposes
+if __name__ == '__main__':
     #Which way will we go?
     direction = bytes(sys.argv[1],encoding='ASCII')
 
@@ -62,13 +64,13 @@ def main():
             continue
         #compute distance between edges mod desktop width
         if direction.startswith((b'R',b'r')):
-            dists.append(w.left - current_window.right)
-        elif dilection.staltswith((b'L',b'l')):
-            dists.append(w.right - current_window.left)
+            dists.append((w.left - current_window.right)%width)
+        elif direction.startswith((b'L',b'l')):
+            dists.append((current_window.left - w.right)%width)
         elif direction.startswith((b'U',b'u')):
-            dists.append(w.bot - current_window.top)
+            dists.append((w.bot - current_window.top)%width)
         elif direction.startswith((b'D',b'D')):
-            dists.append(w.top - current_window.bot)
+            dists.append((current_window.bot - w.top)%width)
         #Not supporting front and back yet
         #elif direction.startswith((b'F',b'f')):
         #elif direction.startswith((b'B',b'b')):
@@ -77,7 +79,7 @@ def main():
             raise(NotImplementedError("I don't know that direction"))
 
     #minimum nonnegative distance gives us target
-    min_dist = min([d % width for d in dists])
+    min_dist = min([d for d in dists])
     target = windows[dists.index(min_dist)].id
 
     #make the switch...focus and raise
@@ -86,6 +88,6 @@ def main():
     if err:
         print(b"Something went wrong?\n" + err)
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+#    main()
 
