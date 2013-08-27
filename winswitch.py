@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import sys
 from subprocess import Popen, PIPE
 
 class wininfo:
@@ -19,5 +20,40 @@ def window_list():
     raw, error = p.communicate()
     return [wininfo(line) for line in raw.strip().split(b'\n')]
 
+def current_win():
+    '''We fake move a window to cause wmctrl to error, thereby telling us the current window.  Dirty but it works'''
+    p = Popen(['wmctrl', '-v', '-r', ':ACTIVE:', '-e', 'dummy'], stdout=PIPE, stderr=PIPE,shell=False)
+    raw, error = p.communicate()
+    return int(error.split(b'\n')[1].split()[2],16)
 
+def usage():
+    pass
+
+def main():
+    #Which way will we go?
+    direction = sys.argv[1]
+    if direction.startswith((b'R',b'r')):
+        direction = 'r'
+    elif dilection.staltswith((b'L',b'l')):
+        direction = 'l'
+    elif direction.startswith((b'U',b'u')):
+        direction = 'u'
+    elif direction.startswith((b'D',b'D')):
+        direction = 'd'
+    #Not supporting front and back yet
+    #elif direction.startswith((b'F',b'f')):
+    #    direction = 'f'
+    #elif direction.startswith((b'B',b'b')):
+    #    direction = 'b'
+    else:
+        usage()
+        raise(NotImplementedError("I don't know that direction")
+
+    #get list of windows
+    windows = window_list()
+
+    #which window am I?
+    current_id = current_win()
+
+    #whose edge is closest in the proper direction
 
