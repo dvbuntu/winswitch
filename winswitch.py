@@ -51,7 +51,7 @@ def main():
 
     #which window am I?
     current_id = current_win()
-    current_win = [w for w in windows if w.id == current_id][0]
+    current_window = [w for w in windows if w.id == current_id][0]
 
     #whose edge is closest in the proper direction?
     dists = list()
@@ -62,13 +62,13 @@ def main():
             continue
         #compute distance between edges mod desktop width
         if direction.startswith((b'R',b'r')):
-            dists.append(w.left - current_win.right)
+            dists.append(w.left - current_window.right)
         elif dilection.staltswith((b'L',b'l')):
-            dists.append(w.right - current_win.left)
+            dists.append(w.right - current_window.left)
         elif direction.startswith((b'U',b'u')):
-            dists.append(w.bot - current_win.top)
+            dists.append(w.bot - current_window.top)
         elif direction.startswith((b'D',b'D')):
-            dists.append(w.top - current_win.bot)
+            dists.append(w.top - current_window.bot)
         #Not supporting front and back yet
         #elif direction.startswith((b'F',b'f')):
         #elif direction.startswith((b'B',b'b')):
