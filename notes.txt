@@ -34,3 +34,13 @@ Todo
 * Change focus from a fixed window to another
 * Get a list of windows and their positions using X11
 * Other Flow tasks
+
+Info
+----
+
+wmctrl
+    This is a command line tool for switching windows, it can also give list
+    information.  I suspect that I can hack together a script that will first
+    print out a listing of windows, parse the positional information, comput
+    e the switch, then call wmctrl again to actually switch focus.
+    So what I wanted to do is basically already doable with wmctrl.  Damn
