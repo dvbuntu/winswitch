@@ -40,7 +40,7 @@ def usage():
 
 def main():
     #Which way will we go?
-    direction = sys.argv[1]
+    direction = bytes(sys.argv[1],encoding='ASCII')
 
     #get width of desktop
     width = 1280
