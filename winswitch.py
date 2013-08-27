@@ -74,7 +74,7 @@ def main():
         #elif direction.startswith((b'B',b'b')):
         else:
             usage()
-            raise(NotImplementedError("I don't know that direction")
+            raise(NotImplementedError("I don't know that direction"))
 
     #minimum nonnegative distance gives us target
     min_dist = min([d % width for d in dists])
