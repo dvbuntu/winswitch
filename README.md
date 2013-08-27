@@ -44,3 +44,7 @@ wmctrl
     print out a listing of windows, parse the positional information, comput
     e the switch, then call wmctrl again to actually switch focus.
     So what I wanted to do is basically already doable with wmctrl.  Damn
+
+I have this version working.  I had to hard code my executable calls in the openbox config because you can't seem to include additional keybindings (within the 'keyboard' section anyway), only overwrite them with an included file.  Further, it couldn't file the executable even when it should have been in my path from sourcing .zshrc in autostart.sh.  Oh well.
+
+Is there a better way to add keybindings in openbox?  I was hoping for some kind of plugin function, but maybe what I'm really thinking of is a patch to openbox that would include my functions to change windows positionally.  That would probably call for my own C program rather than hacking python and wmctrl together.  But it's nice to have and not too many lines.
