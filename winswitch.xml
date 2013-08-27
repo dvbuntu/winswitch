@@ -1,0 +1,20 @@
+<keybind key="A-Right">
+    <action name="execute">
+        <execute>/home/vanboxel/local/bin/winswitch.py r</execute>
+    </action>
+</keybind>
+<keybind key="A-Left">
+    <action name="execute">
+        <execute>/home/vanboxel/local/bin/winswitch.py l</execute>
+    </action>
+</keybind>
+<keybind key="A-Up">
+    <action name="execute">
+        <execute>/home/vanboxel/local/bin/winswitch.py u</execute>
+    </action>
+</keybind>
+<keybind key="A-Down">
+    <action name="execute">
+        <execute>/home/vanboxel/local/bin/winswitch.py d</execute>
+    </action>
+</keybind>
