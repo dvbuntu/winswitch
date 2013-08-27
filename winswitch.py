@@ -57,7 +57,7 @@ def main():
     dists = list()
     for w in windows:
         #skip the current window
-        if w.id = current_id:
+        if w.id == current_id:
             dists.append(width)
             continue
         #compute distance between edges mod desktop width
